@@ -1089,8 +1089,11 @@ class action_plugin_dw2pdf extends ActionPlugin
         if ($event->data['view'] != 'page' || !$this->getConf('showexportbutton')) {
             return;
         }
-
-        if (!$INFO['exists']) {
+// FIX start
+//        if (!$INFO['exists']) {
+          $exists20260703 = $INFO['exists'] ?? null;
+		  if ($exists20260703 !== null && !$INFO['exists']) {
+// FIX end
             return;
         }
 
